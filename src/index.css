@@ -1,0 +1,30 @@
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.pagination {
+  display: flex;
+  list-style: none;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.page-item {
+  cursor: pointer;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+}
+
+.active {
+  background-color: #007bff;
+  color: white;
+}
