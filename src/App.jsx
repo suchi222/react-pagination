@@ -3,7 +3,7 @@ import ReactPaginate from "react-paginate";
 
 const ProductCard = ({ image, title }) => {
   return (
-    <div className="product-card">
+    <div className="border border-gray-300 p-2.5 text-center ">
       <img src={image} alt={title} width="150" />
       <p>{title}</p>
     </div>
@@ -35,13 +35,12 @@ const App = () => {
 
   const handlePageClick = (event) => {
     setCurrentPage(event.selected);
-
   };
 
   return (
     <div>
       <h2>Products</h2>
-      <div className="products">
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(160px,1fr))] gap-4;">
         {currentProducts.map((product) => (
           <ProductCard
             key={product.id}
@@ -51,16 +50,15 @@ const App = () => {
         ))}
       </div>
 
-
       <ReactPaginate
         breakLabel="..."
         nextLabel="Next >"
         previousLabel="< Prev"
         pageCount={pageCount}
         onPageChange={handlePageClick}
-        containerClassName="pagination"
-        activeClassName="active"
-        pageClassName="page-item"
+        containerClassName="flex list-none gap-2 justify-center mt-5"
+        activeClassName="bg-blue-600 text-white"
+        pageClassName="cursor-pointer px-2.5 py-1.5 border border-gray-300"
         pageLinkClassName="page-link"
         previousClassName="page-item"
         nextClassName="page-item"
